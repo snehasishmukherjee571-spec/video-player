@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+  <link rel="stylesheet" href="video.css">
+</head>
+<body>
+    <h1>Advanced Video Player</h1>
+    <div id="videoContainer">
+        <input type="file" id="fileInput" accept="video/*" multiple>
+        <video id="myVideo" controls>
+            Your browser does not support HTML5 video.
+        </video>
+        
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div id="progressBar"></div>
+        </div>
+
+        <div class="controls">
+            <button onclick="playPause()">▶/⏸</button>
+            <button onclick="stop()">⏹</button>
+            <button onclick="skip(-10)">⏪ 10s</button>
+            <button onclick="skip(10)">10s ⏩</button>
+            
+            <!-- Volume Controls -->
+            <div>
+                <button onclick="toggleMute()">🔊</button>
+                <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+            </div>
+
+            <!-- Playback Speed -->
+            <select id="speed" onchange="changeSpeed(this.value)">
+                <option value="0.5">0.5x</option>
+                <option value="1" selected>1x</option>
+                <option value="1.5">1.5x</option>
+                <option value="2">2x</option>
+            </select>
+
+            <!-- Playlist Navigation -->
+            <button onclick="changeVideo(-1)">⏮ Previous</button>
+            <button onclick="changeVideo(1)">Next ⏭</button>
+        </div>
+    </div>
+
+    <!-- Playlist Display -->
+    <div class="playlist" id="playlist"></div>
+
+    <script src="PRACTISEVIDEO.js">
+    
+    </script>
+</body>
+</html>
